@@ -25,7 +25,7 @@ defined( 'ZTEC_UI_ADMIN_DIR' )   ? : define ( 'ZTEC_UI_ADMIN_DIR', ZTEC_PLUGIN_D
 defined( 'ZTEC_TEAM_POST_TYPE' )   ? : define ( 'ZTEC_TEAM_POST_TYPE', 'teams' );
 
 require_once(ZTEC_PLUGIN_INCLUDES_DIR . 'class-team.php');
-require_once(ZTEC_PLUGIN_INCLUDES_DIR . 'class-elementor-widget.php');
+require_once(ZTEC_PLUGIN_INCLUDES_DIR . 'class-team-widget.php');
 
 /*Hook Act when user activate the plugin*/
 
@@ -45,7 +45,7 @@ function ztec_team_uninstall(){
 
 function register_list_widget( $widgets_manager ) {
 
-	require_once ZTEC_UI_FRONT_DIR . 'widgets/widget.php';
+	require_once ZTEC_UI_FRONT_DIR . 'widgets/team_widget.php';
 
 	$widgets_manager->register( new \Elementor_Team_Widget() );
 
