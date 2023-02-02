@@ -273,7 +273,15 @@ class Elementor_Team_Widget extends \Elementor\Widget_Base {
 
 		if($data->have_posts()) :
 			echo '<div class="row">';
-			while($data->have_posts())  : $data->the_post(); ?>
+			while($data->have_posts())  : $data->the_post();
+			$team_player = get_post_meta( get_the_ID(), '_ztec_team_player', true );
+			if(!empty($team_player)){
+				$total_player = count($team_player);
+			}else{
+				$total_player = 0;
+			}
+			
+			?>
 					<div  class="column elementor-team-widget">
 						<div class="card">
 							<img src="<?php echo  wp_get_attachment_url( get_post_thumbnail_id(get_the_ID(),'thumbnail') );  ?>" alt="Jane" style="width:100%">
@@ -281,6 +289,8 @@ class Elementor_Team_Widget extends \Elementor\Widget_Base {
 								<div class="title"><a href="<?php echo get_the_permalink();?>"><?php esc_html_e( get_the_title(), ZTEC_TEXT_DOMAIN); ?></a></div>
 								<div class="description">
 									<p><?php esc_html_e( get_post_meta( get_the_ID(), '_ztec_team_nickname', true ), ZTEC_TEXT_DOMAIN); ?></p>
+									<p><?php esc_html_e("Total Players:- ".$total_player);  ?></p>
+
 									<p><?php esc_html_e( get_post_meta( get_the_ID(), '_ztec_team_history', true ), ZTEC_TEXT_DOMAIN); ?></p>
 								</div>
 							</div>

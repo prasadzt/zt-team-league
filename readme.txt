@@ -11,7 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
  
 Ztec Team League plugin is a full-featured elementor widget for team league based on the principles of flexibility, reliability and powerful features!
-
+store football/sports teams categorized by the league
+team list inclide logo, name, history, nickname and total Player
 
 == Installation ==
  
