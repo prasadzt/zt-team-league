@@ -2,7 +2,7 @@
 /*
 Plugin Name: Ztec Team League 
 Plugin URI: https://zehntech.com
-Description: Ztec Team League Custom Elementor widget
+Description: Team League widget for Elementor
 Version: 1.0.0
 Author: Zehntech
 Author URI: https://zehntech.com
