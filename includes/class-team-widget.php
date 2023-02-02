@@ -16,10 +16,14 @@ class ZTEC_Elementor_Widget
     {
         //add_action('init', [$this, 'ztec_get_team_data']);
         add_action( 'wp_enqueue_scripts', [$this, 'ztec_enqueue_scripts'] );
+        add_action('admin_enqueue_scripts', [$this, 'ztec_admin_css_and_js']);
     }
 
     function ztec_enqueue_scripts() {
         wp_enqueue_style( 'team_widget_css', ZTEC_ASSETS_URL.'css/style.css' );
+    }
+    function ztec_admin_css_and_js() {
+        wp_enqueue_style( 'admin_style_css', ZTEC_ASSETS_URL.'css/admin_style.css' );
     }
 
     function ztec_get_team_data()

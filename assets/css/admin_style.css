@@ -1,0 +1,16 @@
+a.pt-5.player_add_button.button {
+    margin-top: 25px;
+}
+.teamplayer_main_wrapper div p {
+    margin-right: 10px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.teamplayer_main_wrapper div p:first-child{
+    padding-left: 0px;
+}
+.show_inline_section {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

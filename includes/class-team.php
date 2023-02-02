@@ -126,6 +126,22 @@ class ZTEC_Team
         if (isset($_POST['history'])) {
             update_post_meta($post_id, sanitize_key('_ztec_team_history'), sanitize_text_field($_POST['history']));
         }       
+
+        $players = [];
+        if (isset($_POST['player_data'])) {
+            foreach($_POST['player_data']['player_name'] as $k => $player_name){
+                if(!empty($player_name)){
+                    $players[] = [
+                        'player_name' => $player_name,
+                        'player_dob' => $_POST['player_data']['player_dob'][$k]
+                    ];
+                }
+            }
+            update_post_meta($post_id, sanitize_key('_ztec_team_player'), $players);
+        }else{
+            update_post_meta($post_id, sanitize_key('_ztec_team_player'), $players);
+        }
+        
     }
 
 
