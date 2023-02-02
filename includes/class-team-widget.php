@@ -19,47 +19,15 @@ class ZTEC_Elementor_Widget
         add_action('admin_enqueue_scripts', [$this, 'ztec_admin_css_and_js']);
     }
 
+    /**
+     * Responsible for enqueue scripts
+     */
     function ztec_enqueue_scripts() {
         wp_enqueue_style( 'team_widget_css', ZTEC_ASSETS_URL.'css/style.css' );
     }
     function ztec_admin_css_and_js() {
         wp_enqueue_style( 'admin_style_css', ZTEC_ASSETS_URL.'css/admin_style.css' );
     }
-
-    function ztec_get_team_data()
-    {
-        $args = array(
-            'post_type'        => ZTEC_TEAM_POST_TYPE,
-            'posts_per_page'   => -1,
-            'orderby'          => 'post_date',
-            'order'            => 'DESC',
-            'post_status'      => 'publish',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'league',
-                    'field'    => 'term_id',
-                    'terms'    => 34,
-                    ),
-                ),
-           
-            /* 'meta_query' => array(
-                array(
-                    'key'     => 'enterprise_on_page',
-                    'value'   => serialize(strval('trainees')),
-                    'compare' => 'LIKE',
-                ),
-            ), */
-        );
-        
-        $enterprise_posts = get_posts( $args );
-        echo "<pre>";
-        print_r($enterprise_posts);
-        echo "</pre>";
-    }
-
-
-    
-
 
 }
 new ZTEC_Elementor_Widget();
